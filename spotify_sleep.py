@@ -18,9 +18,9 @@ while True:
         print('\nERROR: Please enter a valid integer value for the duration in minutes.')
 
 for second in range(total_seconds, 0, -COUNTDOWN_INTERVAL):
+    os.system('cls')  # clear console
     print(f'{second // 60:02d}:{second % 60:02d} until \'{PROCESS_NAME}\' will be terminated.')  # print the remaining time
     time.sleep(COUNTDOWN_INTERVAL)  # wait for countdown interval
-    os.system('cls')  # clear console
 
 # NOTE: not using the force option (/f) here allows spotify to keep the user's timestamp in the song
 os.system(f'taskkill/im {PROCESS_NAME}')  # kill program and all child processes 
