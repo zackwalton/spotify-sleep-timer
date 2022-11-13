@@ -1,7 +1,7 @@
 import os
 import time
 
-PROCESS_NAME = "spotify.exe"
+PROCESS_NAME = "spotify.exe"  # constant for process to kill
 DEFAULT_LENGTH = 10  # default length of sleep timer in minutes
 COUNTDOWN_INTERVAL = 1 # length of a single countdown interval in seconds
 
@@ -22,5 +22,5 @@ for second in range(total_seconds, 0, -COUNTDOWN_INTERVAL):
     print(f'{second // 60:02d}:{second % 60:02d} until \'{PROCESS_NAME}\' will be terminated.')  # print the remaining time
     time.sleep(COUNTDOWN_INTERVAL)  # wait for countdown interval
 
-# NOTE: not using the force option (/f) here allows spotify to keep the user's timestamp in the song
-os.system(f'taskkill/im {PROCESS_NAME}')  # kill program and all child processes 
+# NOTE: not using the force option (/f) here allows spotify to keep the user's timestamp in the song :D
+os.system(f'taskkill/im {PROCESS_NAME}')  # kill process
